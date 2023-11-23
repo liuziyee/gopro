@@ -9,7 +9,7 @@ import (
 func main() {
 	str1 := "dorohedoro"
 	charArr := []rune(str1)
-	fmt.Println(charArr)
+	fmt.Println(len(charArr))
 
 	//str2 := "你好 \"树先生\""
 	// 反引号可以用来表示字符串
@@ -44,4 +44,22 @@ func main() {
 	strBuilder.WriteString(strconv.Itoa(money))
 
 	fmt.Println(strBuilder.String())
+
+	str3 := "hi"
+	str4 := "hello"
+	fmt.Println(str3 == str4)
+	fmt.Println(str3 > str4)
+
+	// strings包的API
+	str5 := "@#xbox,dorohedoro,nintendo#"
+	fmt.Println(strings.Contains(str5, "do"))
+	fmt.Println(strings.Count(str5, "do"))
+	fmt.Println(strings.Split(str5, ","))
+	fmt.Println(strings.HasPrefix(str5, "@"))
+	fmt.Println(strings.HasSuffix(str5, "#"))
+	fmt.Println(strings.Index(str5, "ro"))
+	fmt.Println(strings.Replace(str5, "do", "go", -1))
+	fmt.Println(strings.ToUpper(str5))
+	// 删除头尾的包含在cutset字符集里的字符
+	fmt.Println(strings.Trim(str5, "#@"))
 }
