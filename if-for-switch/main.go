@@ -46,4 +46,16 @@ func main() {
 	for key := range runeArr {
 		fmt.Printf("%c\n", runeArr[key])
 	}
+
+	day := "1"
+	switch day {
+	case "1", "2", "3", "4", "5":
+		fmt.Println("工作日")
+	case "6":
+		fmt.Println("周六")
+	case "7":
+		fmt.Println("周日")
+	default:
+		fmt.Println("错误")
+	}
 }
