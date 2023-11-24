@@ -18,7 +18,7 @@ func main() {
 	//var e float32
 	//var f float64
 
-	// byte和rune用来存储字符,rune可以存储中文字符
+	// byte和rune用来存储字符,byte是1字节,rune是4字节
 	var char1 byte
 	char1 = 'x'
 	char2 := char1 + 1
