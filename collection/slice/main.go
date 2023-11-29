@@ -5,8 +5,11 @@ import "fmt"
 func main() {
 	var slc1 []string
 	fmt.Printf("%T\n", slc1)
+	if slc1 == nil {
+		fmt.Println("nil")
+	}
 
-	//slc1[0] = "xbox" // 错误的初始化
+	//slc1[0] = "xbox" // 索引越界
 	slc1 = append(slc1, "xbox", "nintendo")
 	fmt.Println(slc1)
 
@@ -21,7 +24,7 @@ func main() {
 	fmt.Printf("%T\n", slc3)
 	fmt.Println(slc3)
 
-	// 3.make函数,会分配内存
+	// 3.make函数,用于切片,map,channel的创建和初始化,会分配内存
 	slc4 := make([]string, 3)
 	slc4[0] = "onepiece"
 	slc4[1] = "naruto"
