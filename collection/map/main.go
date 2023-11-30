@@ -40,7 +40,7 @@ func main() {
 		fmt.Println(key, map3[key])
 	}
 
-	// if的另一种写法
+	// if的简写
 	if _, ok := map3["-1"]; ok {
 		fmt.Printf("in")
 	} else {

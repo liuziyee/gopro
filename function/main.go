@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func multiAdd(items ...int) (sum int, err error) { // 这里已经声明了sum,err这两个变量
+func multiAdd(items ...int) (sum int, err error) { // 这里声明了sum,err这两个变量
 	for _, value := range items {
 		sum += value
 	}
