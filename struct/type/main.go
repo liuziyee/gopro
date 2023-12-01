@@ -7,7 +7,7 @@ import (
 
 type MyInt2 int // 自定义类型
 
-// 给自定义类型绑定方法
+// 绑定方法到自定义类型
 func (i MyInt2) String() string {
 	return strconv.Itoa(int(i))
 }

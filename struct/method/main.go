@@ -14,7 +14,7 @@ type Student struct {
 	school string
 }
 
-// 给结构体绑定方法
+// 绑定方法到结构体
 // 值接收器(值传递)
 func (p Person) toString1() {
 	fmt.Printf("%s, %d, %s, %f\n", p.name, p.age, p.address, p.money)
