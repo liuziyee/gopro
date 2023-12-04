@@ -38,7 +38,7 @@ func add(a, b int) {
 func autoIncrement() func() int {
 	i := 0
 	return func() int {
-		// 闭包:一个函数可以访问到外部变量
+		// 闭包:一个函数可以访问到外部变量(而不是变量的副本)
 		i += 1
 		return i
 	}
