@@ -9,7 +9,6 @@ dist/
 vendor/
 
 *.log
-*.1
 
 .DS_Store
 Thumbs.db

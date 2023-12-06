@@ -16,8 +16,10 @@ type Eater interface {
 }
 
 type MallardDuck struct {
-	wing  int
-	Eater // 匿名接口,即实现了Eater接口
+	wing int
+	// 匿名接口
+	// 结构体嵌套接口的话,它就实现了该接口,即使没有实现该接口的方法
+	Eater
 }
 
 type LettuceEater struct{}
