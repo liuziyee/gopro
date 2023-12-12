@@ -14,11 +14,30 @@ import (
 // go test (-short) (-bench=".*"):执行测试用例):执行以_test.go结尾的测试用例
 
 func main() {
-	r := gin.Default()
-	r.GET("/ping", func(c *gin.Context) {
+	server := gin.Default()
+	// 静态路由
+	server.GET("/ping", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
 			"message": "pong",
 		})
 	})
-	r.Run()
+	// 参数路由
+	server.GET("/manga/:name", func(ctx *gin.Context) {
+		name := ctx.Param("name") // 取得路由参数
+		ctx.String(http.StatusOK, "路由参数: "+name)
+	})
+	// 通配符路由
+	server.GET("/page/*.html", func(ctx *gin.Context) {
+		ctx.String(http.StatusOK, "访问的页面: "+ctx.Param(".html"))
+	})
+
+	server.GET("/user", func(ctx *gin.Context) {
+		id := ctx.Query("id") // 取得请求参数
+		ctx.String(http.StatusOK, "用户ID: "+id)
+	})
+
+	// *不能单独使用,同时要放在路径尾部
+	//server.GET("/wiki/*", func(ctx *gin.Context) {})
+
+	server.Run(":2333")
 }
