@@ -62,4 +62,8 @@ func main() {
 	fmt.Println(strings.ToUpper(str5))
 	// 删除头尾的包含在cutset字符集里的字符
 	fmt.Println(strings.Trim(str5, "#@"))
+
+	str6 := "xbox"
+	bytes := []byte(str6)      // 字符串转为byte切片
+	fmt.Println(string(bytes)) // byte切片转为字符串
 }
